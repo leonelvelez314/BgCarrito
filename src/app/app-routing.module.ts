@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { CarComponent } from './car/car.component';
+import { DetalleComponent } from './home/detalle/detalle.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 
@@ -24,7 +25,12 @@ const routes: Routes = [
     path: 'car',
     component: CarComponent,
     pathMatch: 'full'
-  }
+  },
+  {
+    path: 'home/detalle',
+    component: DetalleComponent,
+    pathMatch: 'full'
+  },
 
 ];
 

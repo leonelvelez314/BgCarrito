@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-detalle',
@@ -7,8 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DetalleComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private rout:Router
+  ) { }
 
   ngOnInit() {}
+
+  onDetalle()
+  {
+    this.rout.navigateByUrl("home/detalle");
+  }
 
 }
