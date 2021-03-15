@@ -37,7 +37,6 @@ export class LoginComponent implements OnInit {
         this.storage.set("token", respuestaLogin.token)
         this.router.navigateByUrl("home")
       }
-      console.log(respuestaLogin)
       
     }, error=>{
       console.log(error);

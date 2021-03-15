@@ -14,9 +14,6 @@ export class DetalleComponent implements OnInit {
 
   ngOnInit() {}
 
-  onDetalle()
-  {
-    this.rout.navigateByUrl("home/detalle");
-  }
+ 
 
 }
