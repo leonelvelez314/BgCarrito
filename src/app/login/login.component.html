@@ -12,12 +12,12 @@
     <ion-img id="imagen"src="assets/login.png"></ion-img>
     <ion-item id="usuario">
       <ion-label position="floating">Usuario</ion-label>
-      <ion-input (input)="onChangeUsuario($event)" ></ion-input>      
+      <ion-input type="email" (input)="onChangeUsuario($event)" ></ion-input>      
     </ion-item>
 
     <ion-item id="password">
       <ion-label position="floating">Password</ion-label>
-      <ion-input  (input)="onChangePassword($event)" ></ion-input>
+      <ion-input type="password" (input)="onChangePassword($event)" ></ion-input>
     </ion-item>
 
       <ion-button (click)="onLogin()"  id="login" fill="outline" expand="block" color="primary" >LOGIN</ion-button>

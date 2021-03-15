@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { DatosUsuarios } from '../model/login';
+import { DatosUsuarios, LoginClassResponse } from '../model/login';
 import { LoginService } from '../services/login.service';
 
 @Component({
@@ -28,9 +28,14 @@ export class LoginComponent implements OnInit {
     request.password = this.password;
 
     
-    this.loginServices.login(request).subscribe(respuesta =>{
-      console.log(respuesta);
-      this.router.navigateByUrl("home")
+    this.loginServices.login(request).subscribe((respuesta:LoginClassResponse) =>{
+      let respuestaLogin : LoginClassResponse  = respuesta;
+      if(respuestaLogin.codigoRetorno === "0001")
+      {
+        this.router.navigateByUrl("home")
+      }
+      console.log(respuestaLogin)
+      
     }, error=>{
       console.log(error);
     })

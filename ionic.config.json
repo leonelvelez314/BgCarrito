@@ -1,5 +1,7 @@
 {
   "name": "BGCarrito",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }
