@@ -12,16 +12,16 @@
     <ion-img id="imagen"src="assets/login.png"></ion-img>
     <ion-item id="usuario">
       <ion-label position="floating">Usuario</ion-label>
-      <ion-input type="email" ></ion-input>
+      <ion-input name="usuarios" [(ngModel)]="usuario"></ion-input>
     </ion-item>
 
     <ion-item id="password">
       <ion-label position="floating">Password</ion-label>
-      <ion-input type="password"></ion-input>
+      <ion-input type="password" [(ngModel)]="password"></ion-input>
     </ion-item>
 
     
-      <ion-button id="login" fill="outline" expand="block" color="primary">LOGIN</ion-button>
+      <ion-button (click)="onLogin()" id="login" fill="outline" expand="block" color="primary" >LOGIN</ion-button>
     
   </section>
 </ion-content>

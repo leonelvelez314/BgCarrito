@@ -18,7 +18,8 @@ export class LoginService {
    login(usuario:DatosUsuarios)
    {
      let request: LoginClass = new LoginClass();
+     request.transaccion = "autenticarUsuario";
      request.datosUsuario = usuario;
-    return this.http.post('https://rolimapp.com:3000/',request);
+    return this.http.post('https://rolimapp.com:3000/usuarios',request);
    }
 }
