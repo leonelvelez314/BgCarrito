@@ -1,4 +1,29 @@
 img{
     width: 100px;
     height: 100px;
+    margin-right: 50px;
+}
+
+ion-checkbox{
+    margin-top: 10px;
+}
+
+#content
+{
+    display: flex;
+    flex-direction: row;
+}
+
+
+#content section{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    
+}
+
+#content section ion-icon{
+    font-size: 20px;
+    
 }

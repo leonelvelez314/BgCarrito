@@ -18,9 +18,19 @@
     <ion-card-header>
       <ion-card-subtitle>{{item.descripcion}}</ion-card-subtitle>
       <ion-card-title>{{"$"+item.precio}}</ion-card-title>
+      <ion-checkbox  color="primary" ></ion-checkbox>
+
     </ion-card-header>
-    <ion-card-content>
+    <ion-card-content id="content">
       <img [src]= "setImage(item.imagen)" alt="no hay imagen"  />
+      <section>
+        <ion-icon name="remove" slot="start"></ion-icon>
+          <p>1</p>
+        <ion-icon name="add" slot="end"></ion-icon>
+      </section>
+      
     </ion-card-content>
+
+
   </ion-card>
 </ion-content>
