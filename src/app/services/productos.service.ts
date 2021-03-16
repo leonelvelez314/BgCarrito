@@ -13,6 +13,6 @@ export class ProductosService {
 
   productos()
   {
-    this.http.post("https://rolimapp.com:3000/productos", {transaccion:'generico', tipo:'4'})
+    return this.http.post("https://rolimapp.com:3000/productos", {transaccion:'generico', tipo:'4'})
   }
 }

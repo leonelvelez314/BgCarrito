@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Storage } from '@ionic/storage';
+import { Producto, ProductoResponse } from '../model/producto';
 import { ProductosService } from '../services/productos.service';
 
 @Component({
@@ -16,7 +17,9 @@ export class HomeComponent implements OnInit {
     ) {
 
       this.storage.get("token").then(res =>{
-        
+        this.productSer.productos().subscribe((resProdu:ProductoResponse) =>{
+          
+        })
       })
       
      }
