@@ -10,10 +10,10 @@
 <ion-content [fullscreen]="true">
 
 
-  <ion-card>
+  <ion-card *ngFor="let item of data" >
     <img src="assets/seco-leva.png" />
     <ion-card-header>
-      <ion-card-subtitle>LEVA SECO</ion-card-subtitle>
+      <ion-card-subtitle>{{item.descripcion}}</ion-card-subtitle>
       <ion-card-title>$8.5</ion-card-title>
     </ion-card-header>
     <ion-card-content>

@@ -11,14 +11,18 @@ import { ProductosService } from '../services/productos.service';
 })
 export class HomeComponent implements OnInit {
 
+  public data : Producto[];
   constructor(private router: Router,
     private storage: Storage,
+    
     private productSer: ProductosService
     ) {
-
+      this.data = new Array<Producto>();
       this.storage.get("token").then(res =>{
         this.productSer.productos().subscribe((resProdu:ProductoResponse) =>{
           
+          this.data = resProdu.data;
+          console.log(this.data)
         })
       })
       
