@@ -32,7 +32,7 @@ export class HomeComponent implements OnInit {
 
   }
 
-  onDetalle()
+  goToDetalle()
   {
     
     this.router.navigateByUrl("home/detalle");
@@ -40,7 +40,9 @@ export class HomeComponent implements OnInit {
 
   setImage(url)
   {
+  
     return 'assets/'+url;
   }
+
 
 }

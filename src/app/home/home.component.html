@@ -11,7 +11,7 @@
 
 
   <ion-card *ngFor="let item of data" >
-    <img [src]= "setImage(item.imagen)" />
+    <img [src]= "setImage(item.imagen)" (click)="goToDetalle()" />
     <ion-card-header>
       <ion-card-subtitle>{{item.descripcion}}</ion-card-subtitle>
       <ion-card-title>{{"$"+item.precio}}</ion-card-title>
