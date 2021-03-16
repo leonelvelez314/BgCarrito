@@ -11,6 +11,7 @@ export class CarComponent implements OnInit {
 
   public data = new Array<Producto>();
   public total : number = 0;
+  public allItemsChecks= false;
   constructor(
     private stora: Storage
   ) { 
@@ -91,7 +92,33 @@ export class CarComponent implements OnInit {
     this.total = this.total - Number(val);
 
   }
-  
 
+  setChecks()
+  {
+    let val = this.data.filter(x=>x.check).length === this.data.length? 'close' : 'checkbox';
+    if(val === 'close')
+    {
+      this.allItemsChecks = true;
+    }else{
+      this.allItemsChecks = false;
+
+    }
+    
+    return val;
+  }
+
+  checkAll()
+  {
+    if(this.allItemsChecks)
+    {
+      this.data.forEach(x=>{
+        x.check = false;
+      })
+    }else{
+      this.data.forEach(x=>{
+        x.check = true;
+      })
+    }
+  }
 
 }
