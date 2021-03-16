@@ -10,8 +10,8 @@
 <ion-content [fullscreen]="true">
 
 
-  <ion-card *ngFor="let item of data" >
-    <img [src]= "setImage(item.imagen)" alt="no hay imagen" (click)="goToDetalle($event, item.id)" />
+  <ion-card *ngFor="let item of data" (click)="goToDetalle($event, item.id)">
+    <img [src]= "setImage(item.imagen)" alt="no hay imagen"  />
     <ion-card-header>
       <ion-card-subtitle>{{item.descripcion}}</ion-card-subtitle>
       <ion-card-title>{{"$"+item.precio}}</ion-card-title>
