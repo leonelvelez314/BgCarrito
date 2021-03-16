@@ -87,16 +87,15 @@ export class DetalleComponent implements OnInit {
   addToCar()
   {
     this.storage.get('prodSeleccionados').then((listaProdu:Producto[]) =>{
-        let listaProduAux = new Array<Producto>();
-        listaProduAux = listaProdu;
-        if(listaProduAux !== null)
+        let listaProduAux = listaProdu;
+        if(listaProduAux === null)
         {
-          if(listaProduAux.filter(x=>x.id === this.dataObjet.id).length === 0)
-          {
-            listaProduAux.push(this.dataObjet);
-            this.storage.set('prodSeleccionados', listaProduAux)
-          }  
+          listaProduAux = new Array<Producto>();          
         }
+
+        listaProduAux.push(this.dataObjet);
+        this.storage.set('prodSeleccionados', listaProduAux)
+        this.rout.navigateByUrl('home'); 
         
         
     })

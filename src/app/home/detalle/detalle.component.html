@@ -12,7 +12,7 @@
     <h2>{{precio}}</h2>
     <p>
       {{descripcion}}      
-      <ion-button id="" [disabled]="!permiteAgg" expand="block">Add To Car</ion-button>
+      <ion-button id="" [disabled]="!permiteAgg" (click)="addToCar()" expand="block">Add To Car</ion-button>
 
     </p>
   </section>
