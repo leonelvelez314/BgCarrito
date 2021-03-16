@@ -1,6 +1,10 @@
 import { Component, OnInit} from '@angular/core';
+import { AlertController } from '@ionic/angular';
 import { Storage } from '@ionic/storage';
+import { Plan, PlanResponse } from '../model/plan';
 import { Producto } from '../model/producto';
+import { PlanService } from '../services/plan.service';
+import { ProductosService } from '../services/productos.service';
 
 @Component({
   selector: 'app-car',
@@ -13,8 +17,10 @@ export class CarComponent implements OnInit {
   public total : number = 0;
   public allItemsChecks= false;
   constructor(
-    private stora: Storage
-  ) { 
+    private stora: Storage,
+    private plan: PlanService 
+    
+     ) { 
 
 
     this.stora.get('prodSeleccionados').then(respuesa =>{
@@ -136,6 +142,20 @@ export class CarComponent implements OnInit {
     });
     this.data = this.data.filter(x=>!x.check)
     
+  }
+
+  async comprar()
+  {
+    let token:string = await this.stora.get('token');
+    this.plan.plan(token).subscribe((respuestaPlan:PlanResponse)=>{
+      this.stora.get('plan').then(resPlan=>{
+        console.log(resPlan)
+        
+        let objetoPlan = respuestaPlan.retorno.find(x=>x.plan === Number(resPlan));
+        
+      })
+      
+    })
   }
 
 }

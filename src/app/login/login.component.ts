@@ -34,6 +34,11 @@ export class LoginComponent implements OnInit {
       let respuestaLogin : LoginClassResponse  = respuesta;
       if(respuestaLogin.codigoRetorno === "0001")
       {
+        console.log(respuestaLogin)
+        this.storage.set("email", respuestaLogin.usuario.email)
+        this.storage.set("nombre", respuestaLogin.usuario.nombre)
+        console.log(respuestaLogin.usuario.plan)
+        this.storage.set("plan", respuestaLogin.usuario.plan)
         this.storage.set("token", respuestaLogin.token)
         this.router.navigateByUrl("home")
       }
