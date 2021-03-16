@@ -3,7 +3,6 @@ import { Router } from '@angular/router';
 import { Storage } from '@ionic/storage';
 import { Producto, ProductoResponse } from '../model/producto';
 import { ProductosService } from '../services/productos.service';
-
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -32,15 +31,16 @@ export class HomeComponent implements OnInit {
 
   }
 
-  goToDetalle()
+  goToDetalle(event, id)
   {
     
-    this.router.navigateByUrl("home/detalle");
+    this.router.navigate(['home/detalle', {id:id}]);
   }
 
   setImage(url)
   {
   
+    
     return 'assets/'+url;
   }
 
