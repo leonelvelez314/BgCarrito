@@ -121,4 +121,17 @@ export class CarComponent implements OnInit {
     }
   }
 
+  takekAll()
+  {
+    this.data.forEach(a=>{
+      if(a.check)
+      {
+        this.restarTotal(Number(a.precio) * a.cantidad)
+      }
+      
+    });
+    this.data = this.data.filter(x=>!x.check)
+    
+  }
+
 }
