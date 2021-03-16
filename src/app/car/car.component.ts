@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { Storage } from '@ionic/storage';
 import { Producto } from '../model/producto';
 
@@ -19,13 +19,17 @@ export class CarComponent implements OnInit {
 
     this.stora.get('prodSeleccionados').then(respuesa =>{
       this.data = respuesa;
-      this.data.forEach((re:Producto)=>{
-        this.total = this.total  + Number(re.precio) * re.cantidad;
-      })
+      console.log(this.data)
+      
     })
   }
 
   ngOnInit() {}
+
+  ngOnDestroy()
+  {
+    this.stora.set('prodSeleccionados', this.data);
+  }
 
   setImage(url)
   {
