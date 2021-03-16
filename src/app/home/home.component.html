@@ -11,12 +11,13 @@
 
 
   <ion-card *ngFor="let item of data" >
-    <img src="assets/seco-leva.png" />
+    <img [src]= "setImage(item.imagen)" />
     <ion-card-header>
       <ion-card-subtitle>{{item.descripcion}}</ion-card-subtitle>
-      <ion-card-title>$8.5</ion-card-title>
+      <ion-card-title>{{"$"+item.precio}}</ion-card-title>
     </ion-card-header>
     <ion-card-content>
-      El terno de 2 piezas incluye la leva y el pantalón, el lavado es en seco, se entrega en armador y con su respectiva funda    </ion-card-content>
+      {{item.detalle}}
+      </ion-card-content>
   </ion-card>
 </ion-content>

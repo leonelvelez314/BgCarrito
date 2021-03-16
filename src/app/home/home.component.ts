@@ -38,4 +38,9 @@ export class HomeComponent implements OnInit {
     this.router.navigateByUrl("home/detalle");
   }
 
+  setImage(url)
+  {
+    return 'assets/'+url;
+  }
+
 }
