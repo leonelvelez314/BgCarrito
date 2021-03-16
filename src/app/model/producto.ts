@@ -11,5 +11,8 @@ export class Producto {
     id:number;
     imagen:string;
     precio:string;
+
+    check:boolean = false;
+    cantidad : number = 0;
 }
 

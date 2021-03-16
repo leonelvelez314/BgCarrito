@@ -92,7 +92,8 @@ export class DetalleComponent implements OnInit {
         {
           listaProduAux = new Array<Producto>();          
         }
-
+        this.dataObjet.check = true;
+        this.dataObjet.cantidad = 1;
         listaProduAux.push(this.dataObjet);
         this.storage.set('prodSeleccionados', listaProduAux)
         this.rout.navigateByUrl('home'); 
