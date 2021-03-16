@@ -9,9 +9,10 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { IonicStorageModule ,} from '@ionic/storage';
 import { HomeComponent } from './home/home.component';
+import { CarComponent } from './car/car.component';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent],
+  declarations: [AppComponent, HomeComponent, CarComponent],
   entryComponents: [],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule,
     IonicStorageModule.forRoot(), BrowserModule

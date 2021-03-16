@@ -14,4 +14,13 @@
     </ion-toolbar>
   </ion-header>
   
+  <ion-card *ngFor="let item of data" >
+    <ion-card-header>
+      <ion-card-subtitle>{{item.descripcion}}</ion-card-subtitle>
+      <ion-card-title>{{"$"+item.precio}}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <img [src]= "setImage(item.imagen)" alt="no hay imagen"  />
+    </ion-card-content>
+  </ion-card>
 </ion-content>
