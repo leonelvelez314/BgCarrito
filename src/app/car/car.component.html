@@ -22,15 +22,15 @@
     <ion-card-header>
       <ion-card-subtitle>{{item.descripcion}}</ion-card-subtitle>
       <ion-card-title>{{"$"+item.precio}}</ion-card-title>
-      <ion-checkbox  color="primary"  [(ngModel)]="item.check" ></ion-checkbox>
+      <ion-checkbox  color="primary"  (ionChange)="changeProduct($event, item.precio, item.cantidad)" [(ngModel)]="item.check" ></ion-checkbox>
 
     </ion-card-header>
     <ion-card-content id="content">
       <img [src]= "setImage(item.imagen)" alt="no hay imagen"  />
       <section>
-        <ion-icon name="remove" slot="start"></ion-icon>
+        <ion-icon name="remove" slot="start" (click)="restarCantidad($event, item.id)"></ion-icon>
           <p>{{item.cantidad}}</p>
-        <ion-icon name="add" slot="end"></ion-icon>
+        <ion-icon name="add" slot="end" (click)="sumarCantidad($event, item.id)"></ion-icon>
       </section>
       
     </ion-card-content>
@@ -41,7 +41,7 @@
   <ion-footer id="footer"> 
     <ion-toolbar>
       
-      <ion-title size="large" >$23</ion-title>
+      <ion-title size="large" >{{"$"+ total}}</ion-title>
 
       <ion-button id="pagar" slot="end" color="primary" fill="outline" >
         BUY
